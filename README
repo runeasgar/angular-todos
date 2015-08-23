@@ -1,1 +1,1 @@
-All you need is a Drupal 8 site with a "To Do" (to_do) content type, REST GET, POST and PATCH enabled with hal json and cookie authentication support, then you'll have to modify app.js to use the CSRF token unique to your site.
+All you need is a Drupal 8 site with a "To Do" (to_do) content type, REST GET, POST and PATCH enabled with hal json and cookie authentication support, then you'll have to modify app.js to use the URL & CSRF token unique to your site.
