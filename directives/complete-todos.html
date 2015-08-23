@@ -3,7 +3,7 @@
 		<li ng-repeat="(key,todo) in completeTodos = (todosCtrl.todos | filter:{ field_complete: {value: 1 } })" class="list-group-item">
 			<div class="checkbox">
 				<label style="width: 100%" class="input-lg">
-					<input type="checkbox" ng-click="todosCtrl.incompleteTodo(todo.nid[0].value)" />
+					<input type="checkbox" ng-click="todosCtrl.incompleteTodo(todo.nid[0].value)" checked=checked />
 					{{todo.title[0].value}}
 				</label>
 			</div>

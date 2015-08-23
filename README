@@ -1,1 +1,6 @@
-All you need is a Drupal 8 site with a "To Do" (to_do) content type, REST GET, POST and PATCH enabled with hal json and cookie authentication support, then you'll have to modify app.js to use the URL & CSRF token unique to your site.
+What you need for this to work:
+1. A Drupal 8 site with this app in a subfolder (e.g., drupalroot/angular).
+2. Drupal 8 REST GET, POST, and PATCH methods enabled with hal+json format and cookie authentication turned on.
+3. A "To Do" (to_do) content type with a "Complete" (complete) boolean field.
+-- This is a consistency issue. Should fix.
+4. Modify app.js's configuration section with the appropriate values.
