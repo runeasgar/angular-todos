@@ -43,6 +43,7 @@
 		this.todoToComplete = { }
 		this.todoToIncomplete = { }
 		this.tab = "incomplete";
+		this.csrfToken = 'bC0PWrHskBpiGbdvIEcmOTwwAucGBbKbxYOuQ2ZIHR4';
 		
 		// Grab todos from Drupal
 		$http.get('/to-dos/json').success(function(data){
@@ -58,7 +59,7 @@
 			// via https://www.drupal.org/node/2405657
 			$http.post('http://drupal8-headless.dd:8083/entity/node',this.todoToCreate, { headers: {
 			'Content-Type': 'application/hal+json',
-			'X-CSRF-Token': 'bC0PWrHskBpiGbdvIEcmOTwwAucGBbKbxYOuQ2ZIHR4'
+			'X-CSRF-Token': this.csrfToken,
 			}})
 			.then(function(response){
 				var explodedLocation = response.headers('Location').split('/');
@@ -78,7 +79,7 @@
 			$http.patch('http://drupal8-headless.dd:8083/node/'+this.todoToComplete.nid[0].value,this.todoToComplete, 
 			{ headers: {
 			'Content-Type': 'application/hal+json',
-			'X-CSRF-Token': 'bC0PWrHskBpiGbdvIEcmOTwwAucGBbKbxYOuQ2ZIHR4'
+			'X-CSRF-Token': this.csrfToken,
 			}})
 			.then(function(response){
 				var keyToComplete = "";
