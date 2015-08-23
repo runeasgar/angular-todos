@@ -1,0 +1,13 @@
+<ul class="list-group">
+	<form name="todosList">
+		<li ng-repeat="(key,todo) in incompleteTodos = (todosCtrl.todos | filter:{ field_complete: {value: 0 } })" class="list-group-item">
+			<div class="checkbox">
+				<label style="width: 100%" class="input-lg">
+					<input type="checkbox" ng-click="todosCtrl.completeTodo(todo.nid[0].value)" />
+					{{todo.title[0].value}}
+				</label>
+			</div>
+		</li>
+	</form>
+</ul>
+<div ng-show="incompleteTodos.length === 0">You have no incomplete todos.</div>
